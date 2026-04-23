@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="about-full-grid">
+      <div class="rich">
+        <h3>Why Couples</h3>
+        <p>Before I became a therapist, I worked at two different crisis centers — one inpatient, one outpatient — and a college peer counseling center. Day after day, I talked people through the worst moments of their lives. And what I noticed, over and over, was that beneath almost every crisis was a relational story. A rupture that hadn't been repaired. A thing that had never been said. A longing for genuine connection that had curdled into despair.</p>
+        <p>That experience sent me to graduate school at UC Berkeley with a specific focus: I wanted to understand what actually goes wrong in relationships. Not at the level of presenting problems, but at the level of the underlying dynamics — the biological, behavioral, and emotional processes that drive people apart even when they love each other.</p>
+
+        <h3>The Research Years</h3>
+        <p>At Berkeley, I spent five years in Robert Levenson's psychophysiology lab studying couples. Levenson's lab is one of the world's premier research environments for understanding what happens inside couples during conflict and intimacy — the moment-by-moment emotion dynamics that determine whether a relationship flourishes or fails.</p>
+        <p>I became certified in FACS — the Facial Action Coding System developed by Paul Ekman — spending 120 hours learning to identify every possible facial muscle movement related to emotion. I also became certified in SPAFF, John Gottman's Specific Affect Coding System, which integrates facial behavior, vocal tone, posture, and context to track the specific emotions couples experience during their interactions.</p>
+        <p>That training produced a level of observational precision that I carry into every clinical session. I know what contempt looks like. I know the difference between a genuine smile and a social one. I know what stonewalling looks like in the body before it appears in the conversation.</p>
+        <p>My dissertation examined the structure of laughter in middle-aged and older marriages — specifically, the differences between antiphonal laughter (shared spontaneous laughter), Duchenne laughter (genuine felt amusement), and voiced laughter. The research revealed meaningful individual differences in how couples use laughter and what those patterns predict about relationship quality and longevity.</p>
+
+        <h3>The Exploratorium</h3>
+        <p>During my doctoral years, I co-authored an interactive museum exhibit for the San Francisco Exploratorium titled <em>The Sounds of Conflict</em>. It has been part of the Exploratorium's permanent collection since 2006. The exhibit was designed to teach everyday visitors about the emotional expressions and interactional patterns most predictive of marital distress — translating the empirical research into something viscerally understandable.</p>
+
+        <h3>Clinical Training</h3>
+        <p>My pre-doctoral internship was at the Northern California Veterans Affairs in Martinez and Oakland, under the supervision of Joel Schmidt, Ph.D. Over 2,000 hours of clinical training with veterans and their families — a population for whom the stakes of mental health treatment are acute and the room for error is small.</p>
+        <p>My post-doctoral training was at Stanford Psychiatry and Behavioral Medicine, under Bruce Arnow, Ph.D. Over 2,000 additional hours working with a diverse population of individuals, couples, and families. During this period I also spent approximately a year working on Project Serve, a Stanford/VA collaboration in which I provided CBT for insomnia to veterans returning from Iraq and Afghanistan.</p>
+
+        <h3>Private Practice</h3>
+        <p>I have been in full-time private practice since 2012, working in Oakland and now San Leandro. I work exclusively with adults and couples. My individual therapy framework draws on Object Relations Theory (particularly Control Mastery Theory), Tibetan Buddhist philosophy, and elements of CBT, DBT, ACT, and motivational interviewing. For couples, I am RLT-certified, having completed certification through the Relational Life Institute in 2022.</p>
+        <p>My clinical mentors in couples work include Dan Wile, Jackie Persons, Mary Ann Norfleet, and Katherine DeWitt — a lineage I consider to be among the most thoughtful in the Bay Area.</p>
+
+        <div class="terry-photo reveal">
+          <img src="/images/patrick-terry-real.jpg" alt="Dr. Patrick Whalen with Terry Real, founder of Relational Life Therapy">
+          <p class="photo-caption">With Terry Real, founder of Relational Life Therapy</p>
+        </div>
+
+        <div style="margin-top:3rem;">
+          <div class="eyebrow">Selected Publications</div>
+          {% for pub in page.publications %}
+          <p style="font-size:.85rem;line-height:1.9;margin-bottom:1rem;">
+            {{ pub.authors | safe }}
+            {{ pub.title }}
+            <em>{{ pub.journal }}</em>, {{ pub.year }}.
+          </p>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="about-sticky">
+        <div class="about-portrait">
+          <img src="/images/patrick-whalen.jpg" alt="Dr. Patrick Whalen, Ph.D.">
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Credentials</div>
+          <ul class="cred-list">
+            {% for cred in page.credentials %}
+            <li><span class="cred-dot-sm">◆</span> {{ cred }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <a class="sidebar-cta" href="/contact">Schedule a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

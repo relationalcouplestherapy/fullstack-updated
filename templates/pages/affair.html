@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="rich">
+        <p>An affair doesn't just break trust. It rewrites the story of the relationship — throws into question not just the future but the past. The betrayed partner experiences something close to trauma: the intrusive images, the loss of the secure base, the disorientation of living in a world that turned out to be different from what they believed it was.</p>
+        <p>The unfaithful partner often arrives carrying a weight that is less legible: shame, yes, but also confusion about what drove them here, grief about what they risked, and sometimes an honest ambivalence about the marriage that the affair was, in part, an expression of.</p>
+        <p>Both of those experiences are real. Both require space. And the work of repair requires attending to both simultaneously — which is why affair recovery is genuinely difficult to do in an environment that is not structured, clear, and direct.</p>
+
+        <h3>How the Work Proceeds</h3>
+        <p>We begin with joint sessions, as with all my couples work. Affair recovery does not require a different structural format — it requires a different quality of honesty, and that is most powerfully developed in the room together. I do recommend the confidential individual contact agreement in all my couples work, and in affair recovery contexts it often becomes particularly important: each partner may have things they need to think through privately before bringing them into joint conversation, and knowing they can reach me directly makes that possible.</p>
+        <p>The joint work then moves through distinct phases: establishing enough safety for honest conversation, building a shared understanding of what happened and what drove it, working through the emotional aftermath on both sides, and — if both partners choose this — beginning the longer project of building something new. Not the relationship that existed before, which has ended, but something that can be, for some couples, more honest and more durable.</p>
+        <p>Not every couple who comes to affair recovery will stay together. Some of the most useful work I do in this context is helping couples understand clearly what they are deciding and why — whether to stay, to leave, or to take more time to know. Clarity is always better than ambiguity.</p>
+
+        <h3>What I Need from Both of You</h3>
+        <p>For affair recovery to have a real chance, I need honesty from the unfaithful partner — complete honesty, disclosed in a structured way that the betrayed partner can actually integrate. I need the unfaithful partner to take full accountability for the choice they made, separate from whatever was wrong in the marriage. And I need the betrayed partner's willingness to eventually — not immediately, and not by bypassing the grief — consider the full story of the marriage and what they want from its future.</p>
+        <p>That is a great deal to ask. And the couples who arrive willing to try are, in my experience, capable of something remarkable.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Begin the Conversation</div>
+          <p>Affair recovery starts with a conversation. Call or write to discuss your situation and whether this work is right for you.</p>
+          <a class="sidebar-cta" href="/contact">Free Consultation</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Related Services</div>
+          <p>
+            <a href="/couples-therapy" style="color:var(--copper-dk);">Couples Therapy</a><br>
+            <a href="/premarital-counseling" style="color:var(--copper-dk);">Premarital Counseling</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

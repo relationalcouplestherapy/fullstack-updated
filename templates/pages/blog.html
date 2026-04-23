@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="blog-grid">
+      {% for post in posts %}
+        {% if post.featured %}
+        <a href="/writing/{{ post.slug }}" class="blog-featured blog-card">
+          <div class="blog-card-img">{{ post.icon }}</div>
+          <div class="blog-card-body">
+            <div class="blog-cat">{{ post.category }}</div>
+            <div class="blog-card-title">{{ post.title }}</div>
+            <div class="blog-card-excerpt">{{ post.excerpt }}</div>
+            <div class="blog-meta">Dr. Patrick Whalen &nbsp;·&nbsp; {{ post.date }} &nbsp;·&nbsp; {{ post.read_time }}</div>
+          </div>
+        </a>
+        {% else %}
+        <a href="/writing/{{ post.slug }}" class="blog-card">
+          <div class="blog-card-img">{{ post.icon }}</div>
+          <div class="blog-card-body">
+            <div class="blog-cat">{{ post.category }}</div>
+            <div class="blog-card-title">{{ post.title }}</div>
+            <div class="blog-card-excerpt">{{ post.excerpt }}</div>
+            <div class="blog-meta">Dr. Patrick Whalen &nbsp;·&nbsp; {{ post.date }} &nbsp;·&nbsp; {{ post.read_time }}</div>
+          </div>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

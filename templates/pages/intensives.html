@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="rich">
+        <p>I offer two very different intensive formats. The Weekend Couples Intensive is private clinical work — just the two of you and me, over two full days. The Relationship Boot Camp is something different entirely: an educational seminar open to couples and individuals, typically attended by fifteen to fifty people, focused on building relational skills through teaching, guided exercises, and reflection. Both are built on the RLT framework. The right format depends on where you are and what you need.</p>
+
+        <h3>Weekend Couples Intensive</h3>
+        <p>Two consecutive days of concentrated couples work — either Saturday and Sunday, or back-to-back Saturdays. Seven hours each day. The pace is different from weekly therapy: we go deeper faster, because we're not stopping just as things get real. There is time to address the presenting crisis, to do the underlying relational work that drives it, and to practice new responses in the room before you leave.</p>
+        <p>This format is particularly well-suited for:</p>
+        <ul>
+          <li>Couples in acute crisis who need to move quickly</li>
+          <li>Couples whose schedules make consistent weekly sessions difficult to sustain</li>
+          <li>Couples who have plateaued in prior therapy and need a different level of engagement</li>
+          <li>Couples traveling from outside the Bay Area for a focused treatment experience</li>
+          <li>Couples preparing for a major transition — a wedding, a new child, a significant life change</li>
+        </ul>
+        <p>Each intensive begins with a pre-weekend conversation — typically a phone or video call — so I have a clear sense of where you are before we begin together. The two days themselves are structured but responsive: we move according to what the couple needs, not a fixed agenda. A follow-up session approximately two to three weeks after the weekend reviews what has shifted and determines next steps.</p>
+
+        <h3>Relationship Boot Camp</h3>
+        <p>The Relationship Boot Camp is a different experience altogether — an immersive two-day educational seminar grounded in the RLT framework, open to both couples and individuals. Groups typically range from fifteen to fifty participants. It is not therapy. It is structured learning: teaching, small-group exercises, guided personal reflection, and practice of the core relational skills that RLT identifies as foundational to intimate connection.</p>
+        <p>The curriculum moves through the essential RLT framework across the two days: the Tri-Part Psyche and how it shows up in conflict; the Five Losing Strategies and their winning counterparts; healthy listening, speaking from the relational self, and making requests rather than complaints; the Feedback Wheel as a practical communication tool; and the underlying relational beliefs and early-learned patterns that drive the most common relationship problems.</p>
+        <p>The boot camp is well-suited for:</p>
+        <ul>
+          <li>Couples who want a structured, skills-focused experience without the intensity of private clinical work</li>
+          <li>Individuals who want to deepen their understanding of their own relational patterns — whether currently partnered or not</li>
+          <li>Couples or individuals who have done therapy and want to consolidate that learning in a structured skills context</li>
+          <li>People who are curious about RLT and want a substantive introduction before considering therapy</li>
+          <li>Those who have read Terry Real's books and want to work with the material in a live, guided setting</li>
+        </ul>
+        <p>There is something particular about learning relational skills in a group that cannot be replicated in individual or couples therapy. Hearing other people name the same patterns — recognizing that your Adaptive Child's favorite strategy is sitting in the room next to someone else's — normalizes and deepens the learning in a way that is genuinely different from private work.</p>
+
+        <h3>Location, Scheduling, and Cost</h3>
+        <p>Both formats run from approximately 9am to 4pm each day, with a lunch break. Boot camps are held at a venue suitable for group work; weekend intensives take place at my office at 400 Estudillo Ave in San Leandro. Dates are scheduled periodically throughout the year. Please contact me to be added to the notification list for upcoming boot camps or to discuss a weekend intensive.</p>
+        <p>If you are traveling from outside the Bay Area for a weekend intensive, I'm happy to recommend nearby accommodations.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Weekend Couples Intensive</div>
+          <p>Sat &amp; Sun, or back-to-back Saturdays<br>7 hours per day · Private clinical format<br>You and your partner only<br><em>Contact for cost</em></p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Relationship Boot Camp</div>
+          <p>Two-day educational seminar<br>Open to couples &amp; individuals<br>15–50 participants · Group format<br>7 hours per day<br><em>Contact for cost</em></p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Get Notified / Inquire</div>
+          <p>Boot camps are scheduled periodically. Reach out to be added to the list or to discuss a private weekend intensive.</p>
+          <a class="sidebar-cta" href="/contact">Get in Touch</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Location</div>
+          <p>400 Estudillo Ave<br>San Leandro, CA<br><br>In-person only for both formats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

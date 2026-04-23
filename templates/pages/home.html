@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">{{ page.hero.eyebrow }}</div>
+      <h1 class="hero-h1">
+        {% for line in page.hero.h1_lines %}
+          {{ line | safe }}<br>
+        {% endfor %}
+      </h1>
+      <p class="hero-sub" style="font-size: 1.35rem; line-height: 1.6;">{{ page.hero.sub }}</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/contact">Schedule a Consultation &rarr;</a>
+        <a class="btn-ghost" href="/the-approach">About the Approach</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-photo">
+        <img src="/images/patrick-whalen.jpg" alt="Dr. Patrick Whalen, Ph.D.">
+      </div>
+      <div class="hero-card-name">Dr. Patrick Whalen, Ph.D.</div>
+      <div class="hero-card-creds">PSY25234 &nbsp;·&nbsp; RLT Certified &nbsp;·&nbsp; UC Berkeley</div>
+      <div class="hero-card-detail">
+        {{ site.address.street }}<br>
+        {{ site.address.city }}<br>
+        {{ site.phone }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS STRIP -->
+<div class="creds-strip">
+  <div class="creds-inner">
+    <div class="cred-item"><span class="cred-dot"></span> Ph.D. Clinical Psychology, UC Berkeley</div>
+    <div class="cred-item"><span class="cred-dot"></span> RLT Certified · Relational Life Institute</div>
+    <div class="cred-item"><span class="cred-dot"></span> FACS &amp; SPAFF Certified · 120 hrs each</div>
+    <div class="cred-item"><span class="cred-dot"></span> Post-Doc · Stanford Psychiatry</div>
+    <div class="cred-item"><span class="cred-dot"></span> SF Exploratorium · Permanent Collection</div>
+    <div class="cred-item"><span class="cred-dot"></span> License PSY25234</div>
+  </div>
+</div>
+
+<!-- WHO I HELP -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Who I Work With</div>
+      <h2 class="section-h2">The couples I see <em>still want this to work.</em></h2>
+      <p class="section-lead">You've had the same fight many times. You know exactly how it starts and exactly how it ends, and you can't stop it. You love each other. Something has gone wrong between you. That's what we fix.</p>
+    </div>
+    <div class="who-grid reveal">
+      {% for card in page.who_cards %}
+      <div class="who-card">
+        <div class="who-icon">{{ card.icon }}</div>
+        <div class="who-title">{{ card.title }}</div>
+        <div class="who-desc">{{ card.desc }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="section about-teaser">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="/images/patrick-whalen.jpg" alt="Dr. Patrick Whalen, Ph.D.">
+        <div class="about-badge">San Leandro, CA</div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">About Dr. Patrick Whalen</div>
+        <blockquote class="about-quote">
+          "I spent five years at UC Berkeley watching couples — frame by frame, second by second. I know what breaks relationships. I built a museum exhibit about it. Now I help people change those patterns."
+        </blockquote>
+        <p class="about-body">
+          I'm a licensed psychologist with a Ph.D. from UC Berkeley and RLT certification from the Relational Life Institute. Before I became a therapist, I spent years in a clinical research lab studying what happens in the bodies and faces of couples when they fight — coding interactions using the same tools developed by Paul Ekman and John Gottman. That research became a permanent exhibit at the San Francisco Exploratorium.
+        </p>
+        <p class="about-body">
+          I've also worked a suicide crisis hotline for over a decade and completed my clinical training at the Northern CA VA and Stanford Psychiatry. I bring all of that — the research, the clinical depth, and the direct, accountable voice of RLT — to every session.
+        </p>
+        <a href="/about" class="btn-primary">Full Bio &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section" style="background:var(--parchment); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="about-grid reveal">
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
+        <div class="eyebrow">Introductory Video</div>
+        <h2 class="section-h2" style="margin-bottom:.5rem;">A brief <em>introduction</em></h2>
+        <p class="section-lead" style="margin-bottom:0;">Before reaching out, many couples want a sense of the person they'll be working with. This short video offers just that — a feel for how I work and what it might be like to sit across from me.</p>
+        <a href="{{ site.pt_url }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--copper-dk);">
+          Watch on Psychology Today →
+        </a>
+      </div>
+      <a href="{{ site.pt_url }}" target="_blank" rel="noopener" class="video-thumb">
+        <img src="/images/patrick-whalen.jpg" alt="Dr. Patrick Whalen introductory video">
+        <div class="play-btn">
+          <div class="play-circle">
+            <div class="play-triangle"></div>
+          </div>
+        </div>
+        <div class="video-label">Introductory Video &nbsp;·&nbsp; Psychology Today</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<div class="quote-band">
+  <blockquote>"{{ page.quote.text }}"</blockquote>
+  <cite>{{ page.quote.attr }}</cite>
+</div>
+
+<!-- PROCESS STEPS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">The Process</div>
+      <h2 class="section-h2">What to <em>expect</em> when you start</h2>
+      <p class="section-lead">I expect both partners to feel genuinely understood within the first two sessions, to have a clear picture of the relational dynamic at play, and to leave with a sense of real direction.</p>
+    </div>
+    <div class="steps reveal">
+      {% for step in page.steps %}
+      <div class="step">
+        <div class="step-num">{{ step.num }}</div>
+        <div>
+          <div class="step-title">{{ step.title }}</div>
+          <div class="step-body">{{ step.body }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" style="background:var(--parchment);border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Services</div>
+      <h2 class="section-h2">What I <em>offer</em></h2>
+    </div>
+    <div class="services-grid reveal">
+      {% for svc in page.services %}
+      <a href="{{ svc.url }}" class="service-card">
+        <div class="service-tag">{{ svc.tag }}</div>
+        <div class="service-title">{{ svc.title }}</div>
+        <div class="service-desc">{{ svc.desc }}</div>
+        <div class="service-link">Learn More →</div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

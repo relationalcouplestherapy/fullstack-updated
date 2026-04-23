@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <p style="margin-bottom:2rem; color:var(--ink-soft); font-size:.95rem; line-height:1.8;">Fill out the form below and I will be in touch within one business day to schedule a time. You can also call directly at <strong>(510) 470-0758</strong>.</p>
+
+        {% if submitted %}
+        <div class="form-success" style="display:block;">
+          <h3>Thank you for reaching out.</h3>
+          <p>I'll be in touch within one business day to schedule our consultation call. In the meantime, feel free to read through <a href="/the-approach" style="color:var(--copper-dk);">The Approach</a> and <a href="/writing" style="color:var(--copper-dk);">the blog</a>.</p>
+        </div>
+        {% else %}
+        <form class="contact-form" id="contact-form" method="POST" action="/contact">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" required placeholder="First and last name">
+            </div>
+            <div class="form-group">
+              <label>Partner's Name (if applicable)</label>
+              <input type="text" name="partner_name" placeholder="Optional">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(510) 000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>What brings you here?</label>
+            <select name="reason">
+              <option value="">Select one</option>
+              <option>Couples Therapy</option>
+              <option>Relationship Coaching</option>
+              <option>Affair Recovery</option>
+              <option>Premarital Counseling</option>
+              <option>Individual Therapy</option>
+              <option>Weekend Intensive</option>
+              <option>Relationship Boot Camp</option>
+              <option>Discernment Counseling</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell me briefly what's going on</label>
+            <textarea name="message" placeholder="A few sentences is fine. This helps me understand your situation before we talk."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Best way to reach you</label>
+            <select name="contact_pref">
+              <option>Email</option>
+              <option>Phone call</option>
+              <option>Text message</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+        {% endif %}
+      </div>
+
+      <div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Practice Details</div>
+          <p><strong>Address</strong><br>400 Estudillo Ave<br>San Leandro, CA</p>
+          <p><strong>Phone</strong><br>(510) 470-0758</p>
+          <p><strong>Email</strong><br>whalenpatrick@gmail.com</p>
+          <p><strong>License</strong><br>PSY25234 · California</p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Session Fees</div>
+          <p>Couples Therapy: <strong>$320 / 50 min</strong><br>Individual Therapy: <strong>$320 / 50 min</strong><br>Initial Consultation: <strong>No charge</strong></p>
+          <p>Out-of-network. Monthly superbills provided.</p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Availability</div>
+          <p>In-person in San Leandro and via secure telehealth throughout California.</p>
+          <p>Typical wait for new clients: <strong>1–2 weeks</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

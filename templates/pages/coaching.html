@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="rich">
+        <h3>How Coaching Differs from Therapy</h3>
+        <p>Couples therapy is a licensed clinical service. It operates within a mental health framework — assessing for psychological symptoms, addressing trauma, and working within the regulatory structure of California's licensing system. Because of that, it is limited to clients in California, where I hold my license.</p>
+        <p>Relationship coaching is a separate practice. It draws on the same RLT principles — the same understanding of relational dynamics, the same skills, the same direct and structured approach — but without the mental health, trauma, or psychotherapy focus. There is no diagnosis, no clinical assessment, and no treatment of psychological conditions. The focus is entirely on relational patterns and the skills that change them.</p>
+        <p>This distinction matters for two reasons. First, it means coaching is available to couples anywhere in the world — outside California, outside the United States. Second, it means coaching is not therapy, and is not typically eligible for insurance reimbursement or the generation of superbills. Couples seeking reimbursement should be aware of this distinction before we begin.</p>
+
+        <h3>What Coaching Looks Like</h3>
+        <p>Sessions follow the same basic structure as my couples therapy work. We meet together — you, your partner, and me, via secure video. I will be direct. I will name what I see. I will teach specific RLT skills and hold you both accountable to practicing them. The pace is typically similar to my clinical work: the core dynamic becomes clear quickly, and most couples feel meaningful movement within the first several sessions.</p>
+        <p>What coaching does not include: trauma processing, psychological assessment, mental health treatment, or anything that falls within the scope of licensed psychotherapy. If it becomes clear that one or both partners would benefit from clinical mental health support, I will say so directly and help you find appropriate resources.</p>
+
+        <h3>Who This Is For</h3>
+        <p>Relationship coaching is designed for couples who are outside California — whether elsewhere in the United States or internationally — and who want access to RLT-grounded work without a clinical or mental health focus. It is also well-suited for couples whose primary need is relational skill-building rather than trauma resolution or psychological treatment.</p>
+        <p>If you are in California and looking for couples therapy, see the <a href="/couples-therapy" style="color:var(--copper-dk);">Couples Therapy</a> page.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Ready to Start?</div>
+          <p>Schedule a free 30-minute phone consultation. We'll talk about what's going on and whether coaching is the right fit.</p>
+          <a class="sidebar-cta" href="/contact">Free Consultation</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Format</div>
+          <p><strong>Location</strong><br>Secure video — available worldwide</p>
+          <p><strong>Sessions</strong><br>Joint sessions with both partners</p>
+          <p><strong>Insurance</strong><br>Not typically reimbursable. No superbills issued for coaching services.</p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Important Distinction</div>
+          <p>Relationship coaching is not psychotherapy and does not constitute a clinical relationship. It does not include mental health assessment, trauma treatment, or diagnosis of any kind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

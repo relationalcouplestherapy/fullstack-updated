@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="rich">
+        <h3>Session Fees</h3>
+        <p>I believe in transparency about fees. There is no better time to invest in your relationship than now — and knowing what that investment looks like makes the decision easier.</p>
+        <div class="fee-table">
+          {% for row in page.fees %}
+          <div class="fee-row">
+            <span class="fee-service">{{ row.service }}</span>
+            <span class="fee-price">{{ row.price }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+        <h3>Insurance</h3>
+        <p>I am an out-of-network provider and do not bill insurance directly. I provide a monthly superbill that you can submit to your insurance carrier for potential reimbursement. Please contact your insurance provider for details about your out-of-network mental health benefits.</p>
+
+        <h3>Cancellation Policy</h3>
+        <p>I require 24 hours' notice for cancellations. Sessions cancelled with less than 24 hours' notice are charged at the full session rate. This policy exists to protect time that has been held specifically for you and your partner.</p>
+
+        <h3>Getting Started</h3>
+        <p>The first step is a free 30-minute phone consultation. You describe what's going on; I ask a few questions; we determine whether working together makes sense. From there we begin with joint sessions — you, your partner, and me. Sessions can take place in my office in San Leandro, via video with both of you at the same location, or with each of you joining from a separate screen. Individual sessions with each partner are not a standard part of my process, though I'm happy to arrange them if requested. I expect both partners to feel genuinely understood and to have a clear picture of the relational dynamic within the first two sessions.</p>
+
+        <div class="faq-list" style="margin-top:2.5rem;">
+          <div class="eyebrow" style="margin-bottom:1.5rem;">Common Questions About Starting</div>
+          <div class="faq-item">
+            <button class="faq-q">How quickly can we get an appointment? <span class="faq-chevron">&#9660;</span></button>
+            <div class="faq-a"><div class="faq-a-inner">I typically have availability within one to two weeks. The free consultation call can usually happen within a few days of your inquiry. If you have a scheduling constraint or a particular urgency, please mention that when you contact me.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Do you offer telehealth? <span class="faq-chevron">&#9660;</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes, via secure video platform for California residents. You can join together from a shared location, or each of you can join from a separate screen — whichever works for your circumstances. Many couples use a combination of in-person and video sessions over the course of the work.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How long will therapy take? <span class="faq-chevron">&#9660;</span></button>
+            <div class="faq-a"><div class="faq-a-inner">RLT moves quickly relative to most approaches. The core relational dynamic typically becomes clear within two to three sessions, and most couples feel meaningful movement within three to six. Once the direction is well defined, couples have real choices about how to continue — weekly sessions for ongoing support, less frequent sessions as a checkpoint, or stepping back when they have the skills they need and returning as needed. Duration ranges from around eight sessions to multiple years. After the assessment phase I'll give you a clear picture of what I see and what I think the work involves.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Start With a Free Call</div>
+          <p>No commitment. No pressure. Just a conversation to see if this is the right fit.</p>
+          <a class="sidebar-cta" href="/contact">Schedule Consultation</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Contact</div>
+          <p><strong>Phone</strong><br>(510) 470-0758</p>
+          <p><strong>Office</strong><br>400 Estudillo Ave<br>San Leandro, CA</p>
+          <p><strong>Email</strong><br>whalenpatrick@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">{{ page.hero_label }}</div>
+    <h1 class="page-hero-h1">{{ page.hero_h1 | safe }}</h1>
+    <p class="page-hero-sub">{{ page.hero_sub }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="rich">
+        <p>Most couples who come to premarital counseling are happy, reasonably well-suited to each other, and looking forward to their future together. They arrive not because something is wrong but because they want to do this thoughtfully — to understand each other more deeply before they begin, and to build a foundation that will hold under the pressures of an actual life shared.</p>
+        <p>That instinct is correct. The research on what makes marriages succeed and fail is unambiguous: the skills that protect relationships — repair, genuine listening, the ability to stay emotionally present under pressure — are not natural. They are learned. And they are dramatically easier to learn before you are in crisis than after.</p>
+
+        <h3>What We Cover</h3>
+        <p>Premarital counseling with me is structured but not formulaic. We build a real map of your relationship: the dynamics that already work well, the areas of potential vulnerability, and the specific skills you will most benefit from developing. Topics typically include:</p>
+        <ul>
+          <li>How each of you handles conflict — what you do, what drives it, and what the patterns predict</li>
+          <li>Your individual attachment histories and how they show up between you</li>
+          <li>The differences between you that will require ongoing negotiation</li>
+          <li>Communication skills specific to your patterns and personalities</li>
+          <li>Sex, money, family of origin, religion, parenting — the territories that surprise couples most</li>
+          <li>How to repair well when things go wrong, because they will</li>
+        </ul>
+        <p>Most premarital work takes place over 6–10 sessions, though we calibrate to what you actually need. Some couples with more complex histories benefit from more; others are ready more quickly.</p>
+
+        <h3>The Right Time to Start</h3>
+        <p>The best time for premarital counseling is several months before the wedding — far enough out that you have time to do real work, not so far out that the focus dissipates. If you are recently engaged and your wedding is more than a year away, it is not too early to begin having these conversations.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Get Started</div>
+          <p>Premarital counseling can begin as soon as you're engaged — or even before. Schedule a free 30-minute consultation to discuss your needs.</p>
+          <a class="sidebar-cta" href="/contact">Free Consultation</a>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-label">Related Services</div>
+          <p>
+            <a href="/couples-therapy" style="color:var(--copper-dk);">Couples Therapy</a><br>
+            <a href="/affair-recovery" style="color:var(--copper-dk);">Affair Recovery</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
