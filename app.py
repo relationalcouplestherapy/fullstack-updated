@@ -3,10 +3,40 @@ Relational Couples Therapy — Dr. Patrick Whalen, Ph.D.
 Full-stack Flask application
 """
 
-from flask import Flask, render_template, abort
-from data.content import PAGES, BLOG_POSTS, SITE
+import os
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-app = Flask(__name__, static_folder="public", static_url_path="")
+from dotenv import load_dotenv
+from flask import Flask, abort, jsonify, render_template, request
+
+from data.content import BLOG_POSTS, PAGES, SITE
+
+load_dotenv()
+
+app = Flask(__name__)
+
+MAIL_FROM    = os.environ.get("MAIL_FROM", "whalenpatrick@gmail.com")
+MAIL_TO      = os.environ.get("MAIL_TO",   "whalenpatrick@gmail.com")
+MAIL_USER    = os.environ.get("MAIL_USER",  MAIL_FROM)
+MAIL_PASS    = os.environ.get("MAIL_PASS",  "")
+
+
+def _send_contact_email(fields: dict) -> None:
+    body = "\n".join(f"{k}: {v}" for k, v in fields.items() if v)
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = f"New consultation request — {fields.get('name', 'unknown')}"
+    msg["From"]    = MAIL_FROM
+    msg["To"]      = MAIL_TO
+    msg["Reply-To"] = fields.get("email", MAIL_FROM)
+    msg.attach(MIMEText(body, "plain"))
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
+        smtp.ehlo()
+        smtp.starttls()
+        smtp.login(MAIL_USER, MAIL_PASS)
+        smtp.sendmail(MAIL_FROM, MAIL_TO, msg.as_string())
 
 # ── Main pages ──────────────────────────────────────────
 @app.route("/")
@@ -37,10 +67,6 @@ def premarital():
 def intensives():
     return render_template("pages/intensives.html", site=SITE, page=PAGES["intensives"])
 
-@app.route("/relationship-coaching")
-def coaching():
-    return render_template("pages/coaching.html", site=SITE, page=PAGES["coaching"])
-
 @app.route("/investment")
 def fees():
     return render_template("pages/fees.html", site=SITE, page=PAGES["fees"])
@@ -64,9 +90,21 @@ def post(slug):
 # ── Contact form handler ─────────────────────────────────
 @app.route("/contact", methods=["POST"])
 def contact_submit():
-    # In production: send email / store to DB
-    return render_template("pages/contact.html", site=SITE,
-                           page=PAGES["contact"], submitted=True)
+    fields = {
+        "Name":             request.form.get("name", ""),
+        "Partner":          request.form.get("partner_name", ""),
+        "Email":            request.form.get("email", ""),
+        "Phone":            request.form.get("phone", ""),
+        "Reason":           request.form.get("reason", ""),
+        "Message":          request.form.get("message", ""),
+        "Contact pref":     request.form.get("contact_pref", ""),
+    }
+    try:
+        _send_contact_email(fields)
+    except Exception as exc:
+        app.logger.error("Contact email failed: %s", exc)
+        return jsonify(ok=False, error=str(exc)), 500
+    return jsonify(ok=True)
 
 # ── 404 ─────────────────────────────────────────────────
 @app.errorhandler(404)
