@@ -15,7 +15,7 @@ from data.content import BLOG_POSTS, PAGES, SITE
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="public", static_url_path="")
 
 MAIL_FROM    = os.environ.get("MAIL_FROM", "whalenpatrick@gmail.com")
 MAIL_TO      = os.environ.get("MAIL_TO",   "whalenpatrick@gmail.com")
