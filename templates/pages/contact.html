@@ -15,13 +15,11 @@
       <div>
         <p style="margin-bottom:2rem; color:var(--ink-soft); font-size:.95rem; line-height:1.8;">Fill out the form below and I will be in touch within one business day to schedule a time. You can also call directly at <strong>(510) 470-0758</strong>.</p>
 
-        {% if submitted %}
-        <div class="form-success" style="display:block;">
+        <div class="form-success" id="form-success" style="display:none;">
           <h3>Thank you for reaching out.</h3>
           <p>I'll be in touch within one business day to schedule our consultation call. In the meantime, feel free to read through <a href="/the-approach" style="color:var(--copper-dk);">The Approach</a> and <a href="/writing" style="color:var(--copper-dk);">the blog</a>.</p>
         </div>
-        {% else %}
-        <form class="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/xjglkaoy">
+        <form class="contact-form" id="contact-form" method="POST" action="/contact">
           <div class="form-row">
             <div class="form-group">
               <label>Your Name</label>
@@ -71,7 +69,6 @@
           </div>
           <button type="submit" class="form-submit">Send Message →</button>
         </form>
-        {% endif %}
       </div>
 
       <div>
